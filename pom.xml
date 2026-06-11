@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
@@ -15,7 +16,9 @@
   <version>1.0.0-SNAPSHOT</version>
 
   <name>ViaBorders</name>
-  <description>A simple Spring Boot service, that is able to calculate any possible land route from one country to another.</description>
+  <description>A simple Spring Boot service, that is able to calculate any possible land route from
+    one country to another.
+  </description>
 
   <url>https://github.com/tomas-kundis-developer/x-example-viaborders</url>
 
@@ -51,11 +54,19 @@
       <optional>true</optional>
     </dependency>
 
+    <!-- ======================================================================================= -->
+    <!-- External libraries                                                                      -->
+    <!-- ======================================================================================= -->
+
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
       <optional>true</optional>
     </dependency>
+
+    <!-- ======================================================================================= -->
+    <!-- Test scope                                                                              -->
+    <!-- ======================================================================================= -->
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -145,6 +156,7 @@
       </plugin>
 
       <!-- Checkstyle -->
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-checkstyle-plugin</artifactId>
