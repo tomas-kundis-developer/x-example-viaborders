@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "viaborders.countries-rest-service.url-json",
+      "type": "java.lang.String",
+      "description": "World countries in JSON REST service URL."
+  }
+] }

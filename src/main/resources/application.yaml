@@ -1,6 +1,9 @@
+# ----------------------------------------------------------------------------------------------------------------------
+# Spring Boot configuration
+# ----------------------------------------------------------------------------------------------------------------------
 spring:
   application:
-    name: viaborders-service
+    name: viaborders-service-1.0.0-SNAPSHOT
 
   http:
     # ------------------------------------------------------------------------------------------------------------------
@@ -27,3 +30,12 @@ spring:
       # Log HTTP method, URL path, query parameters, returned HTTP status code
       # noinspection SpringBootApplicationYaml
       org.springframework.web.servlet.DispatcherServlet: DEBUG
+
+
+# ----------------------------------------------------------------------------------------------------------------------
+# Custom, application logic related configuration
+# ----------------------------------------------------------------------------------------------------------------------
+viaborders:
+  countries-rest-service:
+    # World countries REST service - JSON resource URL
+    url-json: https://raw.githubusercontent.com/mledoze/countries/master/countries.json
