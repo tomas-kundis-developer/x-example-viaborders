@@ -23,6 +23,7 @@
   <url>https://github.com/tomas-kundis-developer/x-example-viaborders</url>
 
   <properties>
+    <argLine/>
     <java.version>25</java.version>
   </properties>
 
@@ -153,6 +154,33 @@
             </configuration>
           </execution>
         </executions>
+      </plugin>
+
+      <!-- Sets a property pointing to the artifact file for each project dependency.-->
+      <!-- For each dependency (direct and transitive) a project property will be set.-->
+      <!-- Needed by: Mockito java agent in maven-surefire-plugin configuration.-->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>properties</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+
+        <!-- Fix surefire:test Mockito warning. -->
+        <!-- Add Mockito as an agent to your build. -->
+        <configuration>
+          <!--suppress UnresolvedMavenProperty -->
+          <argLine>@{argLine} -javaagent:${org.mockito:mockito-core:jar}</argLine>
+        </configuration>
       </plugin>
 
       <!-- Checkstyle -->
