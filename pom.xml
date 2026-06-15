@@ -214,6 +214,26 @@
           <!--suppress UnresolvedMavenProperty -->
           <argLine>@{argLine} -javaagent:${org.mockito:mockito-core:jar}</argLine>
         </configuration>
+
+        <!-- Execute also *IT.java tests from /src/test/java/ during the test phase. -->
+        <!-- Suitable for Spring integration tests that should be run as part of the build,
+        before the final artifact is packaged. -->
+        <!-- This allows us to label those tests with IT postfix and run them during the test phase
+        with surefire plugin instead a verify phase when the artifact is always built. -->
+        <executions>
+          <execution>
+            <id>spring-level-integration-test</id>
+            <phase>test</phase>
+            <goals>
+              <goal>test</goal>
+            </goals>
+            <configuration>
+              <includes>
+                <include>**/*IT.java</include>
+              </includes>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
 
       <!-- Sets a property pointing to the artifact file for each project dependency.-->
