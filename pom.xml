@@ -24,10 +24,16 @@
 
   <properties>
     <argLine/>
+    <!-- Spring Boot Java version feature. -->
     <java.version>25</java.version>
   </properties>
 
   <dependencies>
+
+    <!-- ======================================================================================= -->
+    <!-- Spring Boot starters                                                                    -->
+    <!-- ======================================================================================= -->
+
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-actuator</artifactId>
@@ -55,6 +61,7 @@
       <optional>true</optional>
     </dependency>
 
+
     <!-- ======================================================================================= -->
     <!-- External libraries                                                                      -->
     <!-- ======================================================================================= -->
@@ -64,6 +71,7 @@
       <artifactId>lombok</artifactId>
       <optional>true</optional>
     </dependency>
+
 
     <!-- ======================================================================================= -->
     <!-- Test scope                                                                              -->
@@ -97,11 +105,6 @@
   <build>
     <plugins>
       <plugin>
-        <groupId>org.graalvm.buildtools</groupId>
-        <artifactId>native-maven-plugin</artifactId>
-      </plugin>
-
-      <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
         <configuration>
@@ -113,6 +116,16 @@
           </excludes>
         </configuration>
       </plugin>
+
+      <plugin>
+        <groupId>org.graalvm.buildtools</groupId>
+        <artifactId>native-maven-plugin</artifactId>
+      </plugin>
+
+
+      <!-- ===================================================================================== -->
+      <!-- Maven standard plugins.                                                               -->
+      <!-- ===================================================================================== -->
 
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -156,6 +169,18 @@
         </executions>
       </plugin>
 
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+
+        <!-- Fix surefire:test Mockito warning. -->
+        <!-- Add Mockito as an agent to your build. -->
+        <configuration>
+          <!--suppress UnresolvedMavenProperty -->
+          <argLine>@{argLine} -javaagent:${org.mockito:mockito-core:jar}</argLine>
+        </configuration>
+      </plugin>
+
       <!-- Sets a property pointing to the artifact file for each project dependency.-->
       <!-- For each dependency (direct and transitive) a project property will be set.-->
       <!-- Needed by: Mockito java agent in maven-surefire-plugin configuration.-->
@@ -169,18 +194,6 @@
             </goals>
           </execution>
         </executions>
-      </plugin>
-
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-
-        <!-- Fix surefire:test Mockito warning. -->
-        <!-- Add Mockito as an agent to your build. -->
-        <configuration>
-          <!--suppress UnresolvedMavenProperty -->
-          <argLine>@{argLine} -javaagent:${org.mockito:mockito-core:jar}</argLine>
-        </configuration>
       </plugin>
 
       <!-- Checkstyle -->
