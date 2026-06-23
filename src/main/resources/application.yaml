@@ -11,7 +11,7 @@ spring:
     # ------------------------------------------------------------------------------------------------------------------
     clients:
       connect-timeout: 5s
-      read-timeout: 3s
+      read-timeout: 4s
       redirects: dont_follow
 
   output:
