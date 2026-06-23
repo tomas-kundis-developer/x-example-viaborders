@@ -261,11 +261,11 @@
           <dependency>
             <groupId>com.puppycrawl.tools</groupId>
             <artifactId>checkstyle</artifactId>
-            <version>13.4.1</version>
+            <version>13.5.0</version>
           </dependency>
         </dependencies>
         <configuration>
-          <configLocation>./project/checkstyle-13.4.1/google_checks.xml</configLocation>
+          <configLocation>./project/checkstyle-13.5.0/google_checks.xml</configLocation>
           <failsOnError>true</failsOnError>
           <logViolationsToConsole>true</logViolationsToConsole>
           <consoleOutput>true</consoleOutput>
