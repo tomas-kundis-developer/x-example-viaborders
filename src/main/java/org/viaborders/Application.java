@@ -13,6 +13,9 @@ public class Application {
   /**
    * Spring Boot application starts here.
    *
+   * <p><em>External properties, logging, and other features of Spring Boot
+   * are installed in the context by default only if you use SpringApplication to create it.</em>
+   *
    * @param args Java command-line arguments.
    */
 
