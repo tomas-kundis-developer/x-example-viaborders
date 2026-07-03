@@ -27,7 +27,7 @@ public class TestGraphs {
    * </pre>
    */
   public Graph createTestGraph1() {
-    return Graph.of()
+    return Graph.empty()
         .addNode(new Node("test-node-A"));
   }
 
@@ -45,7 +45,7 @@ public class TestGraphs {
    * </pre>
    */
   public Graph createTestGraph2() {
-    return Graph.of()
+    return Graph.empty()
         .addNode(new Node("test-node-A"))
         .addUndirectedEdge("test-node-A", "test-node-A", 1);
   }
@@ -176,7 +176,7 @@ public class TestGraphs {
    * </pre>
    */
   public Graph createTestGraph100() {
-    return Graph.of()
+    return Graph.empty()
         .addNode(new Node("test-node-A"))
         .addNode(new Node("test-node-B"))
         .addNode(new Node("test-node-C"))
