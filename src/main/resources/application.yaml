@@ -18,6 +18,17 @@ spring:
     ansi:
       enabled: always
 
+  web:
+    # TODO: 2026-07-03: TOKU: Disable in production.
+    error:
+      include-binding-errors: always
+      include-exception: true
+      include-message: always
+      include-path: always
+      include-stacktrace: never
+      whitelabel:
+        enabled: true
+
 
 # ----------------------------------------------------------------------------------------------------------------------
 # Log configuration
