@@ -13,7 +13,7 @@
 
   <groupId>org.tomo.examples</groupId>
   <artifactId>viaborders</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0.0</version>
 
   <name>ViaBorders</name>
   <description>A simple Spring Boot service, that is able to calculate any possible land route from
