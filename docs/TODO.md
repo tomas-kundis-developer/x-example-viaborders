@@ -30,6 +30,8 @@ TODO :: DEVELOPMENT
 TODO :: CODE MAINTENANCE
 ========================
 
+* **REFACTORING:** Make the `graph` subdomain a full-fledged DDD aggregate.
+  * Only `Graph` + `GraphFactory` classes should be publicly visible.
 * Case study: Markdown-formatted comments.
   * https://www.sonarsource.com/blog/java-23-embrace-the-new-era-of-code-comments/ 
   * "Java 23 introduces Markdown-formatted documentation comments, allowing developers to write Javadoc using familiar Markdown syntax alongside traditional HTML Javadoc tags."
